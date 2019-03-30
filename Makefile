@@ -108,10 +108,10 @@ $(DIR_BIN)/demo5.elf: $(LIB_DREAMGL) $(DIR_SRC_SAMPLES)/main_ps2.o $(DIR_SRC_SAM
 	$(CC) -xassembler-with-cpp -c $(CFLAGS) $< -o $@
 
 install: all
-	mkdir -p $(PS2DEV)/dreamgl/include/GL
-	mkdir -p $(PS2DEV)/dreamgl/lib
-	cp -f $(LIB_DREAMGL) $(PS2DEV)/dreamgl/lib
-	cp -f include/GL/*.h $(PS2DEV)/dreamgl/include/GL
+	mkdir -p $(DESTDIR)$(PS2DEV)/dreamgl/include/GL
+	mkdir -p $(DESTDIR)$(PS2DEV)/dreamgl/lib
+	cp -f $(LIB_DREAMGL) $(DESTDIR)$(PS2DEV)/dreamgl/lib
+	cp -f include/GL/*.h $(DESTDIR)$(PS2DEV)/dreamgl/include/GL
 
 
 clean:
